@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+  {% if request.path.rstrip('/') in ('', '/index') %}
+    {% include "components/landing.html" %}
+  {% else %}
+    <div class="container">
+      {{ content | safe }}
+    </div>
+  {% endif %}
+{% endblock %}
+
+{% block scripts %}
+  {{ Assets.js("assets/js/page.js") }}
+  {% if request.path.rstrip('/') in ('', '/index') %}
+    <script src="{{ url_for('views.themes', theme='cyberpunk', path='cyberpunk/landing.js') }}&v=3" defer></script>
+  {% endif %}
+{% endblock %}

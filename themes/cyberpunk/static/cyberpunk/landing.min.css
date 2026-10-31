@@ -1,0 +1,45 @@
+/* Cyberpunk landing page */
+.lp-hero { position: relative; min-height: calc(100vh - 66px); min-height: calc(100svh - 66px); display: flex; align-items: center; justify-content: center; text-align: center; padding: 6rem 0 5rem; overflow: hidden; }
+.lp-canvas { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; }
+.lp-hero::after { content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none; background: radial-gradient(ellipse at 50% 45%, transparent 0%, rgba(7, 4, 15, 0.6) 55%, var(--cp-bg) 100%); }
+.lp-hero-inner { position: relative; z-index: 1; }
+
+.lp-logo { display: block; width: clamp(130px, 16vw, 200px); height: auto; margin: 0 auto 2rem; user-select: none; filter: drop-shadow(0 0 28px rgba(255, 42, 157, 0.6)); animation: lp-bob 5s ease-in-out infinite; }
+@keyframes lp-bob { 0%, 100% { transform: translateY(0) rotate(-2deg); } 50% { transform: translateY(-10px) rotate(2deg); } }
+@media (prefers-reduced-motion: reduce) { .lp-logo { animation: none; } }
+
+.lp-eyebrow { margin: 0 0 18px; font: 12.5px 'Space Mono', monospace; letter-spacing: 0.14em; text-transform: uppercase; color: var(--cp-muted); }
+.lp-title { margin: 0 0 22px; font-size: clamp(44px, 8.5vw, 116px); line-height: 0.95; letter-spacing: 0.02em; color: var(--cp-accent); text-shadow: 3px 0 0 rgba(0, 240, 255, 0.75), -3px 0 0 rgba(252, 238, 10, 0.35), 0 0 30px rgba(255, 42, 157, 0.55), 0 4px 0 rgba(0, 0, 0, 0.5); }
+.lp-sub { max-width: 520px; margin: 0 auto 34px; font-size: 1.1rem; line-height: 1.55; color: var(--cp-body); }
+
+.lp-cta { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+.lp-btn { display: inline-flex; align-items: center; justify-content: center; padding: 14px 30px; border: 2px solid var(--cp-hair-strong); border-radius: 3px; font: 700 16px 'Hanken Grotesk', sans-serif; color: var(--cp-ink) !important; background: transparent; transition: background 0.15s, border-color 0.15s, color 0.15s, transform 0.15s; }
+.lp-btn:hover { background: var(--cp-accent); border-color: var(--cp-accent); color: var(--cp-on-accent) !important; transform: translateY(-3px); }
+.lp-btn-primary { background: var(--cp-accent); border-color: var(--cp-accent); color: var(--cp-on-accent) !important; }
+.lp-btn-primary:hover { background: var(--cp-ink); border-color: var(--cp-ink); color: var(--cp-bg) !important; }
+
+.lp-countdown { margin-top: 28px; font: 13px 'Space Mono', monospace; letter-spacing: 0.04em; color: var(--cp-muted); }
+.lp-countdown b { font-weight: 400; color: var(--cp-accent); }
+
+main:has(.lp-hero) { padding-bottom: 0; margin-bottom: 0; }
+
+/* ───── A hover-car towing a banner, flying along the bottom of the hero ───── */
+.lp-flock-lane { position: absolute; left: 0; right: 0; bottom: 0; height: 200px; z-index: 1; pointer-events: none; overflow: hidden; }
+.lp-flock { position: absolute; bottom: calc(var(--y) + 28px); left: 0; width: 396px; height: 120px; animation: lp-cross var(--dur) linear infinite; animation-delay: var(--d); }
+.lp-witch { position: absolute; right: 0; bottom: 0; width: 396px; height: 96px; filter: drop-shadow(0 0 10px rgba(122, 60, 255, 0.7)); animation: lp-bob2 1.6s ease-in-out infinite; }
+.lp-bat { position: absolute; left: calc(100% + var(--o)); bottom: 22px; font-size: 2rem; transform: scaleX(var(--f, 1)); animation: lp-flap 0.9s ease-in-out infinite; animation-delay: var(--bd); }
+.lp-flock-b .lp-witch { animation-delay: -0.8s; }
+@keyframes lp-cross { from { transform: translateX(-420px); } to { transform: translateX(calc(100vw + 40px)); } }
+@keyframes lp-bob2 { 0%, 100% { transform: translateY(0) rotate(-3deg); } 50% { transform: translateY(-9px) rotate(2deg); } }
+@keyframes lp-flap { 0%, 100% { transform: scaleX(var(--f, 1)) translateY(0); } 50% { transform: scaleX(var(--f, 1)) translateY(-10px) rotate(calc(4deg * var(--f, 1))); } }
+@media (prefers-reduced-motion: reduce) { .lp-flock, .lp-witch, .lp-bat { animation: none; } .lp-flock { left: 20%; } .lp-flock-b { left: 55%; } }
+
+/* ───── Towers and neon signs on the skyline along the bottom ───── */
+.lp-snowmen { position: absolute; left: 0; right: 0; bottom: 0; height: 170px; z-index: 1; pointer-events: none; }
+.lp-drift { position: absolute; left: 0; right: 0; bottom: 0; height: 60px; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='360' height='60' viewBox='0 0 360 60'%3E%3Cpath d='M0 60V34h20V20h26v14h18V8h30v26h14V24h24v10h20V14h28v20h16V28h22v6h18V16h30v18h20V22h28V34H360V60z' fill='%230b0618'/%3E%3Cpath d='M0 34h20V20h26v14h18V8h30v26h14V24h24v10h20V14h28v20h16V28h22v6h18V16h30v18h20V22h28V34H360' fill='none' stroke='%23ff2a9d' stroke-width='2'/%3E%3Cg fill='%2300f0ff'%3E%3Crect x='28' y='26' width='4' height='3'/%3E%3Crect x='76' y='16' width='4' height='3'/%3E%3Crect x='86' y='26' width='4' height='3' fill='%23fcee0a'/%3E%3Crect x='146' y='34' width='4' height='3'/%3E%3Crect x='196' y='22' width='4' height='3' fill='%23fcee0a'/%3E%3Crect x='262' y='24' width='4' height='3'/%3E%3Crect x='312' y='28' width='4' height='3' fill='%23fcee0a'/%3E%3C/g%3E%3C/svg%3E") 0 0 / 360px 60px repeat-x; filter: drop-shadow(0 -4px 12px rgba(255, 42, 157, 0.45)); }
+.lp-crab { position: absolute; bottom: 10px; font-size: 1.5rem; animation: lp-scuttle 5s ease-in-out infinite; animation-delay: var(--cd, 0s); }
+@keyframes lp-scuttle { 0%, 100% { transform: translateX(-14px); } 50% { transform: translateX(14px); } }
+@media (prefers-reduced-motion: reduce) { .lp-crab { animation: none; } }
+.lp-snowman { position: absolute; bottom: 8px; width: calc(80px * var(--s)); height: calc(190px * var(--s)); filter: drop-shadow(0 0 12px rgba(0, 240, 255, 0.35)); transform-origin: 50% 100%; animation: none; animation-delay: var(--bd, 0s); }
+@keyframes lp-sway { 0%, 100% { rotate: -2deg; } 50% { rotate: 2deg; } }
+@media (prefers-reduced-motion: reduce) { .lp-snowman { animation: none; } }

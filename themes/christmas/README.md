@@ -1,6 +1,6 @@
 # Christmas CTFd Theme
 
-A festive dark theme for CTFd: Christmas red, gold and pine green on a deep forest background, Mountains of Christmas headings, a glowing tree, and a landing page full of drifting snowflakes, presents and bells with Santa's sleighs flying along the bottom. Based on the DUCA theme, so every CTFd feature keeps working. Dark only. Tested against CTFd 3.8.x.
+A festive dark theme for CTFd: Christmas red, gold and pine green on a deep forest background, Mountains of Christmas headings, a glowing tree, and a landing page full of drifting snowflakes, presents and bells with Santa's sleighs flying along the bottom. Based on the DUCA theme, so every CTFd feature keeps working. Dark only. Built for the CTFd 3.8 series; tested with CTFd 3.8.9. Other versions are untested.
 
 ## Install
 

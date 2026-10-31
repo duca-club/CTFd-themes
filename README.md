@@ -10,6 +10,15 @@ A set of themes created by DUCA for CTFd.
 
 Each theme is a drop-in CTFd theme directory: copy it to `CTFd/themes/<name>` and select it in the admin panel.
 
+## Compatibility
+
+| Theme | Supported CTFd | Tested with |
+| --- | --- | --- |
+| Halloween | 3.8.x | 3.8.9 |
+| Christmas | 3.8.x | 3.8.9 |
+
+Both themes are built on the CTFd 3.8 core theme (the prebuilt `static/assets` bundle), so they target the 3.8 series. They have only been tested on **CTFd 3.8.9** (Docker image `ctfd/ctfd:3.8.9`, user mode `teams`). Other 3.8.x releases should work but are untested. CTFd 3.7 and older, and 3.9 or newer, are untested and may break because the core JS bundles and templates change between releases.
+
 ## Showcase
 
 ### Halloween

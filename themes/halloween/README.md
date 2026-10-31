@@ -1,6 +1,6 @@
 # Halloween CTFd Theme
 
-A spooky dark theme for CTFd: pumpkin-orange and moonlit purple on near-black, Creepster display headings, a bobbing jack-o'-lantern, and a landing page full of drifting ghosts, bats and code that scatter from your cursor. Based on the DUCA theme, so every CTFd feature keeps working. Dark only. Tested against CTFd 3.8.x.
+A spooky dark theme for CTFd: pumpkin-orange and moonlit purple on near-black, Creepster display headings, a bobbing jack-o'-lantern, and a landing page full of drifting ghosts, bats and code that scatter from your cursor. Based on the DUCA theme, so every CTFd feature keeps working. Dark only. Built for the CTFd 3.8 series; tested with CTFd 3.8.9. Other versions are untested.
 
 ## Install
 

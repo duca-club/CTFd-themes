@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <title>{{ title or Configs.ctf_name }}</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="{{ Configs.ctf_small_icon }}" type="image/x-icon">
+
+  {{ meta | safe }}
+
+  {% block stylesheets %}
+    {{ Assets.css("assets/scss/main.scss") }}
+  {% endblock %}
+
+  <link rel="stylesheet" href="{{ url_for('views.themes', theme='haxxor', path='haxxor/fonts/fonts.css') }}&v=1">
+  <link rel="stylesheet" href="{{ url_for('views.themes', theme='haxxor', path='haxxor/haxxor.css') }}&v=1">
+
+  {{ Plugins.styles }}
+
+  {{ Assets.js("assets/js/color_mode_switcher.js", type=None) }}
+
+  <script type="text/javascript">
+      window.init = {
+          'urlRoot': "{{ request.script_root }}",
+          'csrfNonce': "{{ Session.nonce }}",
+          'userMode': "{{ Configs.user_mode }}",
+          'userId': {{ Session.id }},
+          'userName': {{ User.name | tojson }},
+          'userEmail': {{ User.email | tojson }},
+          'userVerified': {{ User.verified | tojson }},
+          'teamId': {{ Team.id | tojson }},
+          'teamName': {{ Team.name | tojson }},
+          'start': {{ Configs.start | tojson }},
+          'end': {{ Configs.end | tojson }},
+          'themeSettings': {{ Configs.theme_settings | tojson }},
+          'eventSounds': [
+            "/themes/haxxor/static/sounds/notification.webm",
+            "/themes/haxxor/static/sounds/notification.mp3",
+          ],
+      }
+  </script>
+
+  {{ Configs.theme_header }}
+</head>
+<body>
+{% include "components/navbar.html" %}
+
+<main role="main">
+  {% block content %}
+  {% endblock %}
+</main>
+
+{% include "components/snackbar.html" %}
+
+<footer class="footer hx-footer">
+  <div class="hx-ticker" aria-hidden="true">
+    <div class="hx-ticker-track">
+      {% for g in range(2) %}
+      <div class="hx-ticker-group">
+        {% for i in range(6) %}<span>ACCESS GRANTED</span><span class="dot">/</span><span>CAPTURE THE FLAG</span><span class="dot">/</span><span>sudo make me a flag</span><span class="dot">/</span><span>HACK THE PLANET</span><span class="dot">/</span>{% endfor %}
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  <div class="container hx-footer-row">
+    <a href="https://duca.au" target="_blank" rel="noopener" class="hx-footer-link">duca.au</a>
+    <a href="https://ctfd.io" class="hx-footer-link muted">{% trans %}Powered by CTFd{% endtrans %}</a>
+  </div>
+</footer>
+
+{% include "components/notifications.html" %}
+
+{% block scripts %}
+  {{ Assets.js("assets/js/page.js") }}
+{% endblock %}
+
+{{ Plugins.scripts }}
+
+{{ Configs.theme_footer }}
+<script src="{{ url_for('views.themes', theme='haxxor', path='haxxor/haxxor.js') }}&v=1" defer></script>
+</body>
+</html>

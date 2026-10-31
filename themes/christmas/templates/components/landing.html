@@ -1,0 +1,70 @@
+<link rel="stylesheet" href="{{ url_for('views.themes', theme='christmas', path='christmas/landing.css') }}&v=4">
+
+<section class="lp-hero" id="lp-hero">
+  <canvas class="lp-canvas" id="lp-canvas" aria-hidden="true"></canvas>
+
+  <div class="lp-hero-inner container">
+    <img class="lp-logo" src="{{ url_for('views.themes', theme='christmas', path='christmas/tree.svg') }}" alt="Christmas tree" draggable="false">
+
+    <p class="lp-eyebrow">Season's greetings, hackers</p>
+    <h1 class="lp-title">{{ Configs.ctf_name }}</h1>
+    <p class="lp-sub">Capture the flag, wrapped with a bow. Pick a challenge, crack the present, climb the nice list.</p>
+
+    <div class="lp-cta">
+      {% if authed() %}
+        <a class="lp-btn lp-btn-primary" href="{{ url_for('challenges.listing') }}">Play challenges</a>
+        <a class="lp-btn" href="{{ url_for('scoreboard.listing') }}">Scoreboard</a>
+      {% else %}
+        {% if registration_visible() %}
+          <a class="lp-btn lp-btn-primary" href="{{ url_for('auth.register') }}">Join the fun</a>
+        {% endif %}
+        <a class="lp-btn lp-btn-ghost" href="{{ url_for('scoreboard.listing') }}">Scoreboard</a>
+      {% endif %}
+    </div>
+
+    <p class="lp-countdown" id="lp-countdown" hidden></p>
+  </div>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="lp-snowman" viewBox="0 0 100 150">
+      <path d="M22 84L4 66M78 84l18-18M4 66l-4-8M4 66l8-2M96 66l4-8M96 66l-8-2" stroke="#7a4a21" stroke-width="4" stroke-linecap="round"/>
+      <circle cx="50" cy="106" r="38" fill="#f4fbff"/><circle cx="50" cy="56" r="27" fill="#ffffff"/><circle cx="50" cy="28" r="20" fill="#f4fbff"/>
+      <rect x="32" y="12" width="36" height="6" rx="2" fill="#1b1b24"/><rect x="38" y="-4" width="24" height="18" rx="2" fill="#1b1b24"/><rect x="38" y="6" width="24" height="4" fill="#e63946"/>
+      <circle cx="43" cy="26" r="2.5" fill="#1b1b24"/><circle cx="57" cy="26" r="2.5" fill="#1b1b24"/><path d="M50 31l14 4-14 3z" fill="#ff8a1f"/>
+      <path d="M32 44q18 10 36 0l2 8q-20 10-40 0z" fill="#e63946"/><path d="M62 50l6 20-8 2-2-18z" fill="#c1121f"/>
+      <circle cx="50" cy="66" r="3" fill="#1b1b24"/><circle cx="50" cy="82" r="3" fill="#1b1b24"/><circle cx="50" cy="104" r="3" fill="#1b1b24"/>
+    </symbol>
+    <symbol id="lp-sleigh" viewBox="0 0 150 80">
+      <path d="M8 66h104c10 0 14-4 12-10" fill="none" stroke="#ffd166" stroke-width="4" stroke-linecap="round"/>
+      <path d="M22 62V40c0-6 4-8 10-8h74c0 14-4 26-14 30z" fill="#c1121f"/>
+      <path d="M22 40h84" stroke="#ffd166" stroke-width="3"/>
+      <path d="M32 32c0-8 6-12 14-12s14 4 14 12z" fill="#c1121f"/>
+      <circle cx="46" cy="14" r="5" fill="#fff8ee"/>
+      <circle cx="46" cy="26" r="7" fill="#f6c9a0"/>
+      <path d="M38 28c2 12 14 12 16 0z" fill="#fff8ee"/>
+      <path d="M36 18h20l-4-10z" fill="#e63946"/><rect x="34" y="17" width="24" height="5" rx="2" fill="#fff8ee"/>
+      <rect x="84" y="20" width="22" height="18" rx="2" fill="#2fbf71"/><path d="M95 20v18M84 29h22" stroke="#ffd166" stroke-width="3"/>
+      <rect x="110" y="28" width="14" height="12" rx="2" fill="#4aa8ff"/><path d="M117 28v12" stroke="#fff8ee" stroke-width="2"/>
+    </symbol>
+  </svg>
+  <div class="lp-flock-lane" aria-hidden="true">
+    <div class="lp-flock" style="--d:0s;--y:0px;--dur:22s">
+      <span class="lp-bat" style="--o:-210px;--bd:0s">🦌</span>
+      <span class="lp-bat" style="--o:-150px;--bd:.3s">🦌</span>
+      <span class="lp-bat" style="--o:-90px;--bd:.6s">🦌</span>
+      <svg class="lp-witch"><use href="#lp-sleigh"/></svg>
+    </div>
+    <div class="lp-flock lp-flock-b" style="--d:-12s;--y:26px;--dur:30s">
+      <span class="lp-bat" style="--o:-170px;--bd:.15s">⛄</span>
+      <span class="lp-bat" style="--o:-120px;--bd:.45s">🎁</span>
+      <svg class="lp-witch"><use href="#lp-sleigh"/></svg>
+    </div>
+  </div>
+  <div class="lp-snowmen" aria-hidden="true">
+    <svg class="lp-snowman" style="left:4%;--s:1"><use href="#lp-snowman"/></svg>
+    <svg class="lp-snowman" style="left:11%;--s:.62;--bd:-1.2s"><use href="#lp-snowman"/></svg>
+    <svg class="lp-snowman" style="right:5%;--s:.85;--bd:-.6s;transform:scaleX(-1)"><use href="#lp-snowman"/></svg>
+    <svg class="lp-snowman" style="right:12%;--s:.55;--bd:-1.8s"><use href="#lp-snowman"/></svg>
+    <div class="lp-drift"></div>
+  </div>
+</section>

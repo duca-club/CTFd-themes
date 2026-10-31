@@ -7,6 +7,7 @@ A set of themes created by DUCA for CTFd.
 | --- | --- | --- |
 | Halloween | [`themes/halloween`](themes/halloween) | Spooky pumpkin and purple dark theme |
 | Christmas | [`themes/christmas`](themes/christmas) | Festive red, gold and pine green dark theme |
+| Summer | [`themes/summer`](themes/summer) | Sunny night-beach dark theme with orange and turquoise |
 
 Each theme is a drop-in CTFd theme directory: copy it to `CTFd/themes/<name>` and select it in the admin panel.
 
@@ -16,8 +17,9 @@ Each theme is a drop-in CTFd theme directory: copy it to `CTFd/themes/<name>` an
 | --- | --- | --- |
 | Halloween | 3.8.x | 3.8.9 |
 | Christmas | 3.8.x | 3.8.9 |
+| Summer | 3.8.x | 3.8.9 |
 
-Both themes are built on the CTFd 3.8 core theme (the prebuilt `static/assets` bundle), so they target the 3.8 series. They have only been tested on **CTFd 3.8.9** (Docker image `ctfd/ctfd:3.8.9`, user mode `teams`). Other 3.8.x releases should work but are untested. CTFd 3.7 and older, and 3.9 or newer, are untested and may break because the core JS bundles and templates change between releases.
+All themes are built on the CTFd 3.8 core theme (the prebuilt `static/assets` bundle), so they target the 3.8 series. They have only been tested on **CTFd 3.8.9** (Docker image `ctfd/ctfd:3.8.9`, user mode `teams`). Other 3.8.x releases should work but are untested. CTFd 3.7 and older, and 3.9 or newer, are untested and may break because the core JS bundles and templates change between releases.
 
 ## Showcase
 
@@ -36,3 +38,11 @@ Both themes are built on the CTFd 3.8 core theme (the prebuilt `static/assets` b
 | <a href="showcase/christmas/01-landing.png"><img src="showcase/christmas/01-landing.png" alt="Landing page" width="260"></a><br>Landing page | <a href="showcase/christmas/02-login.png"><img src="showcase/christmas/02-login.png" alt="Login" width="260"></a><br>Login | <a href="showcase/christmas/03-register.png"><img src="showcase/christmas/03-register.png" alt="Register" width="260"></a><br>Register |
 | <a href="showcase/christmas/04-scoreboard.png"><img src="showcase/christmas/04-scoreboard.png" alt="Scoreboard" width="260"></a><br>Scoreboard | <a href="showcase/christmas/05-users.png"><img src="showcase/christmas/05-users.png" alt="Users" width="260"></a><br>Users | <a href="showcase/christmas/06-challenges.png"><img src="showcase/christmas/06-challenges.png" alt="Challenges" width="260"></a><br>Challenges |
 | <a href="showcase/christmas/07-challenge-modal.png"><img src="showcase/christmas/07-challenge-modal.png" alt="Challenge modal" width="260"></a><br>Challenge modal | <a href="showcase/christmas/08-team-profile.png"><img src="showcase/christmas/08-team-profile.png" alt="Team profile" width="260"></a><br>Team profile | <a href="showcase/christmas/09-landing-mobile.png"><img src="showcase/christmas/09-landing-mobile.png" alt="Landing (mobile)" width="260"></a><br>Landing (mobile) |
+
+### Summer
+
+| | | |
+| :---: | :---: | :---: |
+| <a href="showcase/summer/01-landing.png"><img src="showcase/summer/01-landing.png" alt="Landing page" width="260"></a><br>Landing page | <a href="showcase/summer/02-login.png"><img src="showcase/summer/02-login.png" alt="Login" width="260"></a><br>Login | <a href="showcase/summer/03-register.png"><img src="showcase/summer/03-register.png" alt="Register" width="260"></a><br>Register |
+| <a href="showcase/summer/04-scoreboard.png"><img src="showcase/summer/04-scoreboard.png" alt="Scoreboard" width="260"></a><br>Scoreboard | <a href="showcase/summer/05-users.png"><img src="showcase/summer/05-users.png" alt="Users" width="260"></a><br>Users | <a href="showcase/summer/06-challenges.png"><img src="showcase/summer/06-challenges.png" alt="Challenges" width="260"></a><br>Challenges |
+| <a href="showcase/summer/07-challenge-modal.png"><img src="showcase/summer/07-challenge-modal.png" alt="Challenge modal" width="260"></a><br>Challenge modal | <a href="showcase/summer/08-team-profile.png"><img src="showcase/summer/08-team-profile.png" alt="Team profile" width="260"></a><br>Team profile | <a href="showcase/summer/09-landing-mobile.png"><img src="showcase/summer/09-landing-mobile.png" alt="Landing (mobile)" width="260"></a><br>Landing (mobile) |
